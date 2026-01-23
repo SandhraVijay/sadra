@@ -1,0 +1,328 @@
+:root {
+    --bg-paper: url('../images/bg-paper.png');
+    --bg-color: #fdfbf7;
+    --text-dark: #3e2723;
+    --text-muted: #5d4037;
+    --accent-brown: #8d6e63;
+    --accent-gold: #bcaaa4;
+    --paper-shadow: 5px 5px 15px rgba(62, 39, 35, 0.15);
+    --font-heading: 'Special Elite', cursive;
+    --font-body: 'Courier Prime', monospace;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: var(--bg-paper);
+    background-repeat: repeat;
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand {
+    font-family: var(--font-heading);
+    color: var(--text-dark);
+}
+
+/* Vintage Navbar */
+.glass-nav {
+    background: rgba(253, 251, 247, 0.95);
+    border-bottom: 2px dashed var(--accent-brown);
+    padding: 1rem 0;
+    box-shadow: var(--paper-shadow);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: var(--text-dark) !important;
+}
+
+.nav-link {
+    color: var(--text-dark) !important;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.nav-link:hover {
+    color: var(--accent-brown) !important;
+    text-decoration: underline;
+}
+
+/* Paper Card Style */
+.glass-card {
+    background: #fffdf5;
+    background-image: var(--bg-paper);
+    border: none;
+    border-radius: 2px;
+    padding: 2rem;
+    box-shadow: 10px 10px 0px rgba(141, 110, 99, 0.2), 
+                0 0 5px rgba(0,0,0,0.1);
+    transform: rotate(-1deg);
+    transition: transform 0.3s ease;
+    position: relative;
+    margin-top: 1rem;
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 20px;
+    background: rgba(255,255,255,0.4);
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+    transform: rotate(2deg);
+}
+
+.glass-card:hover {
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 15px 15px 0px rgba(141, 110, 99, 0.3);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 80px;
+    background: none;
+}
+
+.profile-img-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    padding: 10px;
+    background: white;
+    box-shadow: var(--paper-shadow);
+    transform: rotate(3deg);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(0.3);
+    border-radius: 0;
+    border: none;
+}
+
+/* Buttons */
+.btn-primary-custom {
+    background: var(--text-dark);
+    color: #fffdf5;
+    border: 2px solid var(--text-dark);
+    border-radius: 0;
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+    box-shadow: 5px 5px 0px var(--accent-brown);
+    transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    background: transparent;
+    color: var(--text-dark);
+    box-shadow: 2px 2px 0px var(--accent-brown);
+    transform: translate(3px, 3px);
+}
+
+.btn-outline-custom {
+    background: transparent;
+    color: var(--text-dark);
+    border: 2px dashed var(--text-dark);
+    border-radius: 0;
+    font-family: var(--font-heading);
+}
+
+.btn-outline-custom:hover {
+    background: var(--text-dark);
+    color: #fffdf5;
+}
+
+/* Section Spacing */
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    border-bottom: 3px double var(--accent-brown);
+    padding-bottom: 5px;
+    margin-bottom: 3rem;
+}
+
+.section-title::after {
+    display: none;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding-left: 3rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 2px;
+    height: 100%;
+    background: var(--text-dark);
+    border-right: 2px dashed var(--text-dark);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -45px;
+    width: 30px;
+    height: 30px;
+    background: var(--bg-color);
+    border: 2px solid var(--text-dark);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Skills Progress */
+.progress-container {
+    margin-bottom: 2rem;
+}
+
+.progress {
+    background-color: rgba(62, 39, 35, 0.1);
+    height: 12px;
+    border-radius: 0;
+    border: 1px solid var(--text-dark);
+    overflow: visible;
+}
+
+.progress-bar {
+    background: repeating-linear-gradient(
+        45deg,
+        var(--text-dark),
+        var(--text-dark) 10px,
+        var(--accent-brown) 10px,
+        var(--accent-brown) 20px
+    );
+    border-radius: 0;
+}
+
+/* Form Styles */
+.form-control {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--text-dark);
+    border-radius: 0;
+    color: var(--text-dark);
+    font-family: var(--font-body);
+}
+
+.form-control:focus {
+    background: transparent;
+    box-shadow: none;
+    border-color: var(--accent-brown);
+    color: var(--text-dark);
+}
+
+/* Footer */
+footer {
+    background: var(--text-dark) !important;
+    margin-top: 5rem;
+    border-top: 10px solid var(--accent-brown);
+    color: #fffdf5;
+    padding: 3rem 0;
+}
+
+.text-primary {
+    color: var(--text-dark) !important;
+}
+
+.text-secondary {
+    color: var(--text-muted) !important;
+}
+
+.text-accent-gold {
+    color: var(--accent-brown) !important;
+}
+
+/* Project Cards */
+.project-card {
+    position: relative;
+    cursor: pointer;
+    border: 1px solid var(--text-dark);
+}
+
+.project-card img {
+    transition: transform 0.5s ease;
+    filter: sepia(0.2);
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+    filter: none;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(62, 39, 35, 0.9);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #fffdf5;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+/* Modals */
+.modal-content {
+    background-image: var(--bg-paper) !important;
+    background-color: #fdfbf7 !important;
+    border: 5px solid double var(--text-dark) !important;
+    color: var(--text-dark);
+    border-radius: 0;
+}
+
+.btn-close {
+    filter: none;
+    opacity: 0.5;
+}
+
+.btn-close:hover {
+    opacity: 1;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-up {
+    animation: fadeInUp 1s ease forwards;
+}
